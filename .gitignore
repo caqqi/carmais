@@ -11,6 +11,11 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# Maven embeded
+.mvn/
+mvnw.cmd
+mvnw
+
 # Package Files #
 *.jar
 *.war
