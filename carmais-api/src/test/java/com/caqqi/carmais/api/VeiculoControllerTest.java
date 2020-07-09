@@ -1,9 +1,10 @@
 package com.caqqi.carmais.api;
 
-import com.caqqi.carmais.domain.entidade.Marca;
-import com.caqqi.carmais.domain.entidade.Modelo;
-import com.caqqi.carmais.domain.entidade.Versao;
-import com.caqqi.carmais.domain.repository.VeiculoRepository;
+import com.caqqi.carmais.veiculo.api.VeiculoController;
+import com.caqqi.carmais.veiculo.api.dto.MarcaDto;
+import com.caqqi.carmais.veiculo.api.dto.ModeloDto;
+import com.caqqi.carmais.veiculo.api.dto.VersaoDto;
+import com.caqqi.carmais.veiculo.domain.service.VeiculoService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -29,17 +30,17 @@ class VeiculoControllerTest {
   private MockMvc mvc;
 
   @MockBean
-  private VeiculoRepository veiculoRepository;
+  private VeiculoService veiculoService;
 
   @Test
   @DisplayName("Deve retornar todas as Marcas")
   void deve_retonar_todas_as_marcas() throws Exception {
     final var marcas = List.of(
-      new Marca("FIAT"),
-      new Marca("TOYOTA")
+      new MarcaDto("FIAT"),
+      new MarcaDto("TOYOTA")
     );
 
-    given(veiculoRepository.marcas()).willReturn(marcas);
+    given(veiculoService.marcas()).willReturn(marcas);
 
     mvc.perform(
       get("/v1/veiculos/marcas")
@@ -55,11 +56,11 @@ class VeiculoControllerTest {
   @DisplayName("Deve retornar todas os Modelos")
   void deve_retonar_todos_os_modelos() throws Exception {
     final var modelos = List.of(
-      new Modelo(1L, "UNO"),
-      new Modelo(4L, "COROLLA")
+      new ModeloDto(1L, "UNO"),
+      new ModeloDto(4L, "COROLLA")
     );
 
-    given(veiculoRepository.modelos()).willReturn(modelos);
+    given(veiculoService.modelos()).willReturn(modelos);
 
     mvc.perform(
       get("/v1/veiculos/modelos")
@@ -77,11 +78,11 @@ class VeiculoControllerTest {
   @DisplayName("Deve retornar todas as Versões")
   void deve_retonar_todas_as_versoes() throws Exception {
     final var versoes = List.of(
-      new Versao(1L, "1.0 MPI MILLE FIRE 8V FLEX 2P MANUAL"),
-      new Versao(6L, "1.6 GLI 16V GASOLINA 4P AUTOMÁTICO")
+      new VersaoDto(1L, "1.0 MPI MILLE FIRE 8V FLEX 2P MANUAL"),
+      new VersaoDto(6L, "1.6 GLI 16V GASOLINA 4P AUTOMÁTICO")
     );
 
-    given(veiculoRepository.versoes()).willReturn(versoes);
+    given(veiculoService.versoes()).willReturn(versoes);
 
     mvc.perform(
       get("/v1/veiculos/versoes")

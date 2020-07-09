@@ -1,4 +1,4 @@
-package com.caqqi.carmais.api.dto;
+package com.caqqi.carmais.veiculo.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

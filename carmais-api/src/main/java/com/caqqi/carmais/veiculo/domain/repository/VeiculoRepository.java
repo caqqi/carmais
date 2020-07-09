@@ -1,8 +1,8 @@
-package com.caqqi.carmais.domain.repository;
+package com.caqqi.carmais.veiculo.domain.repository;
 
-import com.caqqi.carmais.domain.entidade.Marca;
-import com.caqqi.carmais.domain.entidade.Modelo;
-import com.caqqi.carmais.domain.entidade.Versao;
+import com.caqqi.carmais.veiculo.domain.entidade.Marca;
+import com.caqqi.carmais.veiculo.domain.entidade.Modelo;
+import com.caqqi.carmais.veiculo.domain.entidade.Versao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

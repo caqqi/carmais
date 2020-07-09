@@ -1,4 +1,4 @@
-package com.caqqi.carmais.domain.entidade;
+package com.caqqi.carmais.veiculo.domain.entidade;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;

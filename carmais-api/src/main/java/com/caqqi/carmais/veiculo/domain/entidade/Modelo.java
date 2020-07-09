@@ -1,4 +1,4 @@
-package com.caqqi.carmais.domain.entidade;
+package com.caqqi.carmais.veiculo.domain.entidade;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
