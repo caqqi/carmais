@@ -16,6 +16,17 @@ public class Modelo extends Entidade {
   @Size(min = 5, max = 100)
   private String nome;
 
+  public Modelo() {}
+
+  public Modelo(
+    @NotNull Long marcaId,
+    @NotNull
+    @NotBlank
+    @Size(min = 5, max = 100) String nome) {
+    this.marcaId = marcaId;
+    this.nome = nome;
+  }
+
   public Long getMarcaId() {
     return marcaId;
   }

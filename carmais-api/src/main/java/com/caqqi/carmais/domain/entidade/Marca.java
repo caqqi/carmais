@@ -13,6 +13,15 @@ public class Marca extends Entidade {
   @Size(min = 5, max = 100)
   private String nome;
 
+  public Marca() { }
+
+  public Marca(
+    @NotNull
+    @NotBlank
+    @Size(min = 5, max = 100) String nome) {
+    this.nome = nome;
+  }
+
   public String getNome() {
     return nome;
   }

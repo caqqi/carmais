@@ -16,6 +16,17 @@ public class Versao extends Entidade {
   @Size(min = 5, max = 150)
   private String descricao;
 
+  public Versao() {}
+
+  public Versao(
+    @NotNull Long modeloId,
+    @NotNull
+    @NotBlank
+    @Size(min = 5, max = 150) String descricao) {
+    this.modeloId = modeloId;
+    this.descricao = descricao;
+  }
+
   public Long getModeloId() {
     return modeloId;
   }
