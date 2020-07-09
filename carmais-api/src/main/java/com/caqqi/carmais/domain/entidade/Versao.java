@@ -3,6 +3,8 @@ package com.caqqi.carmais.domain.entidade;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Versao extends Entidade {
 
@@ -29,4 +31,15 @@ public class Versao extends Entidade {
   public void setDescricao(String descricao) {
     this.descricao = descricao;
   }
+
+  public static Versao rowMapper(ResultSet rs, int rowNum) throws SQLException {
+    var versao = new Versao();
+    versao.setId(rs.getLong(ID));
+    versao.setModeloId(rs.getLong("MODELO_ID"));
+    versao.setDescricao(rs.getString("DESCRICAO"));
+    versao.setDataInsert(rs.getDate(DATA_INSERT));
+    versao.setDataUpdate(rs.getDate(DATA_UPDATE));
+    return versao;
+  }
+
 }
