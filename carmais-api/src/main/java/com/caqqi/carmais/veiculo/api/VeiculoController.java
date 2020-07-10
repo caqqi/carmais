@@ -24,14 +24,6 @@ public class VeiculoController {
     this.veiculoService = veiculoService;
   }
 
-  @GetMapping("/marcas")
-  public ResponseEntity<List<MarcaDto>> marcas() {
-    final var marcas = veiculoService.marcas();
-    return CollectionUtils.isNotEmpty(marcas)
-      ? ResponseEntity.ok(veiculoService.marcas())
-      : ResponseEntity.noContent().build();
-  }
-
   @GetMapping("/modelos")
   public ResponseEntity<List<ModeloDto>> modelos() {
     final var modelos = veiculoService.modelos();

@@ -1,5 +1,6 @@
 package com.caqqi.carmais.veiculo.domain.service;
 
+import com.caqqi.carmais.veiculo.api.dto.MarcaComModeloDto;
 import com.caqqi.carmais.veiculo.api.dto.MarcaDto;
 import com.caqqi.carmais.veiculo.api.dto.ModeloDto;
 import com.caqqi.carmais.veiculo.api.dto.VersaoDto;
@@ -56,6 +57,10 @@ public class VeiculoService {
       ));
 
     return versoesDto;
+  }
+
+  public List<MarcaComModeloDto> marcasComModelos() {
+    return veiculoRepository.marcasComModelos();
   }
 
 }

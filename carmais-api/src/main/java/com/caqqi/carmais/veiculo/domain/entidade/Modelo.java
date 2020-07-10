@@ -8,6 +8,8 @@ import java.sql.SQLException;
 
 public class Modelo extends Entidade {
 
+  public static final String SQL_TODOS_MODELOS = "SELECT * FROM MODELO";
+
   @NotNull
   private Long marcaId;
 

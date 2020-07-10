@@ -8,6 +8,8 @@ import java.sql.SQLException;
 
 public class Versao extends Entidade {
 
+  public static final String SQL_TODAS_VERSOES = "SELECT * FROM VERSAO";
+
   @NotNull
   private Long modeloId;
 
